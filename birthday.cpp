@@ -50,8 +50,6 @@ int main() {
             cin >> name;
             auto it = find_if(birthdays.begin(), birthdays.end(), [&](const Birthday& b) {
                 return b.name == name;
-                //  temp=strcmp(b.name.c_str(), name.c_str());
-                //  return temp;
             });
             if (it != birthdays.end()) {
                 cout << "Enter new day (1-31): ";
@@ -68,34 +66,14 @@ int main() {
             Birthday birthday;
             cout << "Enter name to delete: ";
             cin >> birthday.name;
-            // birthdays.erase (birthdays.end() - 1);
-            // cout << "Birthday deleted from list."<<endl;
+           
             auto it = find_if(birthdays.begin(), birthdays.end(), [&](const Birthday& b) {
                 return b.name == birthday.name;
             });
             birthdays.erase(it);
             cout<<"Birthday Record deleted."<<endl;
         }
-        /*
-            Birthday birthday;
-            cout << "Enter name to delete: ";
-            cin >> birthday.name;
-            for (auto it = birthdays.begin(); it != birthdays.end(); ++it){
-                if(it==birthday.name){
-                    birthdays.erase(it);
-                    cout<<"Birthday Record deleted."<<endl;
-                }
-            }
-        */
 
-        // else if (option == 3) {
-        //     cout << "Enter name to delete: ";
-        //     string name;
-        //     cin >> name;
-            // auto it = remove_if(birthdays.begin(), birthdays.end(), [&](const Birthday& b) {
-            //     return b.name;
-            // });
-        //}
         else if (option == 4){
             Birthday birthday;
             cout << "Enter name to search: ";
